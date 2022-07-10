@@ -1,0 +1,41 @@
+plugins {
+    id 'java'
+    id 'net.minecraftforge.gradle' version '5.1.+'
+}
+
+def MCVERSION='1.19'
+def MAJORMOD='1'
+def MAJORAPI='0'
+def MINOR='0'
+def PATCH='0'
+
+
+group 'com.vispgaming'
+version "${MCVERSION}-${MAJORMOD}.${MAJORAPI}.${MINOR}.${PATCH}"
+
+minecraft {
+    mappings channel: 'official', version: '1.19'
+}
+
+dependencies {
+    minecraft 'net.minecraftforge:forge:1.19-41.0.87'
+}
+
+jar {
+    manifest {
+        attributes([
+                "Specification-Title"     : "Regions",
+                "Specification-Vendor"    : "VispReaderUS",
+                "Specification-Version"   : "1", // We are version 1 of ourselves
+                "Implementation-Title"    : project.name,
+                "Implementation-Version"  : project.version,
+                "Implementation-Vendor"   : "VispReaderUS",
+                "Implementation-Timestamp": new Date().format("yyyy-MM-dd'T'HH:mm:ssZ")
+        ])
+    }
+    processResources{
+        expand(version : project.version)
+    }
+}
+
+

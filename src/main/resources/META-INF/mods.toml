@@ -1,0 +1,21 @@
+modLoader="javafml"
+loaderVersion="[41,)"
+license="gpl-3.0"
+issueTrackerURL="https://github.com/VIspReaderUS/Regions/issues"
+[[mods]]
+  modId="regions"
+  version="${version}"
+  displayName="Regions"
+  discription="Create world regions"
+  [[dependencies.regions]]
+    modId="forge"
+    mandatory=true
+    versionRange="[41,)"
+    ordering="NONE"
+    side="BOTH"
+  [[dependencies.regions]]
+    modId="minecraft"
+    mandatory=true
+    versionRange="[1.19,1.20)"
+    ordering="NONE"
+    side="BOTH"
