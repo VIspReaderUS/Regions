@@ -38,4 +38,16 @@ jar {
     }
 }
 
+jar.finalizedBy('copyToServer')
+
+task copyToServer (type: Copy){
+    delete 'build/libs'
+    from 'build/libs/'
+    include '*.jar'
+    into serverFolder
+}
+
+
+
+
 
